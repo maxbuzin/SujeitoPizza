@@ -1,20 +1,22 @@
 /** @format */
-import Head from 'next/head'
 import { Inter } from 'next/font/google'
+
+import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+
 import { Input } from '@/components/ui/Input'
 import { Button } from '@/components/ui/Button'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Signup() {
 	return (
 		<>
 			<Head>
-				<title>SujeitoPizza - Login</title>
+				<title>SujeitoPizza - Cadastro</title>
 			</Head>
-			<main className='flex flex-col items-center w-[90%] md:w-full  m-auto gap-12'>
+			<main className='flex flex-col items-center justify-center w-[90%] md:w-full  m-auto h-screen gap-12 '>
 				<Image
 					src='/logo.svg'
 					width={300}
@@ -23,6 +25,10 @@ export default function Home() {
 				/>
 				<div className='w-full max-w-xs'>
 					<form className='flex flex-col gap-4 text-red'>
+						<Input
+							type='text'
+							placeholder='Digite seu nome'
+						/>
 						<Input
 							type='text'
 							placeholder='Digite seu email'
@@ -34,13 +40,13 @@ export default function Home() {
 						<Button
 							type='submit'
 							loading={false}>
-							Acessar
+							Cadastrar
 						</Button>
 					</form>
 					<Link
-						href='/signup'
+						href='/'
 						className='flex justify-center w-full mt-3 text-sm text-center transition-all duration-300 opacity-70 hover:opacity-100'>
-						Não possui conta? Cadastre-se
+						Já possui conta? Acesse aqui
 					</Link>
 				</div>
 			</main>
